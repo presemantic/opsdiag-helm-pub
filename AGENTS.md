@@ -23,7 +23,7 @@ Chart release workflows must publish Helm OCI artifacts to `europe-west1-docker.
 
 Charts are pushed directly to the dedicated public OpsDiag chart repository without an extra namespace segment. For example, `opsdiag-app-connector` is pushed as `europe-west1-docker.pkg.dev/prod-common-cicd/opsdiag-helm-pub/opsdiag-app-connector`.
 
-The public connector chart renders `/app/config.yaml` from the top-level `config` value. Standard `license`/`licenseServer` must live at the top level of `config`, while relay settings must live under `config.relay` as `license`, `edgeURL`, and `relayURL` in deploy/user values, not in the public chart defaults. Do not split those values into Secrets or license-specific environment variables. The `connector` value is only for runtime tuning such as timeouts and frame limits.
+The public connector chart renders `/app/config.yaml` from the top-level `config` value. Standard `license` and base Control edge `url` must live at the top level of `config`, while relay settings must live under `config.relay` as `license` and relay WebSocket `url` in deploy/user values, not in the public chart defaults. Do not duplicate the Control edge URL under `config.relay`, and do not include `/api/...` paths in config URLs. Do not split those values into Secrets or license-specific environment variables. The `connector` value is only for runtime tuning such as timeouts and frame limits.
 
 The connector chart `appVersion` and default image tag track the released `opsdiag-app-connector` image tag. The release workflow must not rewrite `appVersion` to the chart release tag.
 

@@ -20,6 +20,6 @@ namespace-range random UID while keeping non-root and restricted container
 security defaults.
 
 The connector chart renders `/app/config.yaml` from `values.config`. Supply
-the app `license` and `licenseServer` at the top level, and put relay settings
-under `relay.license`, `relay.edgeURL`, and `relay.relayURL`; the public chart
-does not ship license defaults.
+the app `license` and base Control edge `url` at the top level, and put relay
+settings under `relay.license` and `relay.url`; the public chart does not ship
+license defaults.
