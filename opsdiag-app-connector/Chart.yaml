@@ -3,7 +3,7 @@ name: opsdiag-app-connector
 description: OpsDiag customer-side app connector
 type: application
 version: 0.1.15
-appVersion: "2026-06-25.22-16-18.b81e4f"
+appVersion: "2026-06-25.22-42-36.7f7011"
 home: https://opsdiag.ai
 sources:
   - https://github.com/presemantic/opsdiag-app-connector

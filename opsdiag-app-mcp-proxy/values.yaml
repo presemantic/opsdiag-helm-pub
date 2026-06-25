@@ -16,7 +16,7 @@ containerName: mcp-proxy
 image:
   registry: europe-west1-docker.pkg.dev
   repository: prod-common-cicd/opsdiag-docker-pub/opsdiag-app-mcp-proxy-api
-  tag: "2026-06-25.22-16-18.75ac67"
+  tag: "2026-06-25.22-42-36.a3b694"
   digest: ""
   pullPolicy: IfNotPresent
   pullSecrets: []

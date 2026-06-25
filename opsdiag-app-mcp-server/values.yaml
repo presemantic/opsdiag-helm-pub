@@ -16,7 +16,7 @@ containerName: mcp-server
 image:
   registry: europe-west1-docker.pkg.dev
   repository: prod-common-cicd/opsdiag-docker-pub/opsdiag-app-mcp-server-api
-  tag: "2026-06-25.22-16-18.6a46ab"
+  tag: "2026-06-25.22-42-36.b965a0"
   digest: ""
   pullPolicy: IfNotPresent
   pullSecrets: []
