@@ -413,9 +413,9 @@ api:
     ## @param api.image.repository App API image repository
     repository: presemantic/public/images/opsolving-app-api
     ## @param api.image.tag App API image tag
-    tag: "2026-08-12.23-17-37.c546b74"
+    tag: "2026-08-29.00-34-29.04fdf28"
     ## @param api.image.digest App API image digest; overrides the tag when set
-    digest: "sha256:c195e22d3ab4e38bc9bf78bda57077594764f4cf6f81724cec2e46520467cf56"
+    digest: "sha256:981f7a677721de3a37c80b3aacd87a292af7550e582d8ac076e31738e166a262"
     ## @param api.image.pullPolicy App API image pull policy
     pullPolicy: IfNotPresent
     ## @param api.image.pullSecrets App API image pull secrets
@@ -474,8 +474,6 @@ api:
     vcs:
       ## @param api.config.vcs.url Internal App VCS URL; rendered from the Helm release name
       url: 'http://{{ include "opsolving-app.componentName" (dict "root" . "component" "vcs") }}:{{ .Values.vcs.service.ports.http }}'
-      ## @param api.config.vcs.webhookBaseUrl Optional public HTTPS origin used only for provider webhook callbacks; empty falls back to the OAuth issuer
-      webhookBaseUrl: ""
 
   ## Additional App API deployment settings
   ##
@@ -953,9 +951,9 @@ mcp-proxy:
     ## @param mcp-proxy.image.repository App MCP Proxy image repository
     repository: presemantic/public/images/opsolving-app-mcp-proxy-api
     ## @param mcp-proxy.image.tag App MCP Proxy image tag
-    tag: "2026-08-11.19-40-48.8b7235a"
+    tag: "2026-08-29.00-34-29.edcc579"
     ## @param mcp-proxy.image.digest App MCP Proxy image digest; overrides the tag when set
-    digest: "sha256:d4969549dd0cb106334cd4dd7499f6e34ac257cf621601fd0f6d294a57a4deea"
+    digest: "sha256:afbb382c12f7a96fe88cec5702667602815f4b46b49f65263a114d59e964ca28"
     ## @param mcp-proxy.image.pullPolicy App MCP Proxy image pull policy
     pullPolicy: IfNotPresent
     ## @param mcp-proxy.image.pullSecrets App MCP Proxy image pull secrets
@@ -1180,9 +1178,9 @@ vcs:
     ## @param vcs.image.repository App VCS image repository
     repository: presemantic/public/images/opsolving-app-vcs-api
     ## @param vcs.image.tag Exact published App VCS image tag
-    tag: "2026-08-12.01-11-43.cf5ae81"
+    tag: "2026-08-29.00-34-29.43ccb21"
     ## @param vcs.image.digest Optional immutable App VCS image digest
-    digest: "sha256:fb52b4b5a38b174db1de7edfc0aee2588020a6b904f7ce3699f1ef4dd6f144d1"
+    digest: "sha256:e90540d458f75cbbb0098236fa3cbf0889cbb85b4cafade5d59af0c28e06b941"
     ## @param vcs.image.pullPolicy App VCS image pull policy
     pullPolicy: IfNotPresent
     ## @param vcs.image.pullSecrets App VCS image pull secrets
@@ -1217,16 +1215,6 @@ vcs:
       license: ""
       ## @param vcs.config.connector.licenseServer Control Edge origin used to exchange the Connector client license for short-lived transport grants
       licenseServer: https://edge.opsolving.ai
-    ## @param vcs.config.webhookMasterKey Secret key used to derive per-reviewer webhook secrets
-    webhookMasterKey: ""
-    ## @param vcs.config.credentials VCS credentials referenced by review sources
-    credentials: []
-    ## @param vcs.config.sources GitLab and Bitbucket source arrays
-    sources:
-      ## @param vcs.config.sources.gitlab GitLab Cloud/Self-Managed source entries
-      gitlab: []
-      ## @param vcs.config.sources.bitbucket Bitbucket Cloud/Data Center source entries
-      bitbucket: []
   ## @param vcs.extraEnvVars Additional App VCS environment variables
   extraEnvVars:
     - name: GOMAXPROCS
@@ -1408,9 +1396,9 @@ front:
     ## @param front.image.repository App Frontend image repository
     repository: presemantic/public/images/opsolving-app-front
     ## @param front.image.tag App Frontend image tag
-    tag: "2026-08-12.22-54-04.dceca20"
+    tag: "2026-08-29.00-34-29.f26bd09"
     ## @param front.image.digest App Frontend image digest; overrides the tag when set
-    digest: "sha256:28ddfef8de05869e977f17a87d0f98a66602da0f0934a0ed0c4eb962dc2bc353"
+    digest: "sha256:598faab89928fdc6f9a4d115c00fbe63dd982aca338d207b89820e484ce9a4c2"
     ## @param front.image.pullPolicy App Frontend image pull policy
     pullPolicy: IfNotPresent
     ## @param front.image.pullSecrets App Frontend image pull secrets
@@ -1600,9 +1588,9 @@ pipelines:
     ## @param pipelines.image.repository App Pipelines image repository
     repository: presemantic/public/images/opsolving-app-pipelines
     ## @param pipelines.image.tag App Pipelines image tag
-    tag: "2026-08-12.13-07-29.218dc08"
+    tag: "2026-08-29.00-34-29.045543b"
     ## @param pipelines.image.digest App Pipelines image digest
-    digest: "sha256:d04f272e9cbe1abd5deb485dc5c4ebf620bf92d186d4653e668173282d19587f"
+    digest: "sha256:9c9e8ad5afcb62248358945861f1437a5707ab3678a0514bc573abc97ba85eff"
     ## @param pipelines.image.pullPolicy App Pipelines image pull policy
     pullPolicy: IfNotPresent
     ## @param pipelines.image.pullSecrets App Pipelines image pull secrets
@@ -2069,17 +2057,6 @@ gateway:
           send: 3600
           ## @param gateway.routing.upstreams.mcp-proxy.timeout.read APISIX read timeout for MCP requests
           read: 3600
-      vcs:
-        ## @param gateway.routing.upstreams.vcs.component Internal App VCS component name
-        component: vcs
-        timeout:
-          ## @param gateway.routing.upstreams.vcs.timeout.connect APISIX connection timeout for App VCS requests
-          connect: 10
-          ## @param gateway.routing.upstreams.vcs.timeout.send APISIX send timeout for App VCS requests
-          send: 300
-          ## @param gateway.routing.upstreams.vcs.timeout.read APISIX read timeout for App VCS requests
-          read: 300
-
     ## @param gateway.routing.routes Ordered standalone APISIX routes; every route targets one named internal upstream
     routes:
       - id: oauth-protected-resource
@@ -2122,13 +2099,6 @@ gateway:
           - /mcp/self/*
         upstream: mcp-proxy
         priority: 950
-      - id: vcs-hooks
-        name: VCS hooks
-        uris:
-          - /api/vcs/hooks
-          - /api/vcs/hooks/*
-        upstream: vcs
-        priority: 940
       - id: api
         name: App API
         uris:
