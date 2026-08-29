@@ -413,9 +413,9 @@ api:
     ## @param api.image.repository App API image repository
     repository: presemantic/public/images/opsolving-app-api
     ## @param api.image.tag App API image tag
-    tag: "2026-08-29.00-34-29.04fdf28"
+    tag: "2026-08-29.15-22-18.8e7c9a9"
     ## @param api.image.digest App API image digest; overrides the tag when set
-    digest: "sha256:981f7a677721de3a37c80b3aacd87a292af7550e582d8ac076e31738e166a262"
+    digest: "sha256:267ae8631ce62a9b076e39f74ac230a19be11831b26afd8c1d85a9ff3f60201b"
     ## @param api.image.pullPolicy App API image pull policy
     pullPolicy: IfNotPresent
     ## @param api.image.pullSecrets App API image pull secrets
@@ -666,6 +666,9 @@ api:
       # Keep false unless the explicitly authorized migration may run without a restore safety net.
       - name: SCHEDULER_V2_MIGRATION_ACK
         value: "false"
+      # Keep false until both PostgreSQL databases are backed up and the provider-identity cutover report is approved.
+      - name: PROVIDER_IDENTITY_CUTOVER_MIGRATION_ACK
+        value: "false"
 
 ## @section App Agent parameters
 ##
@@ -697,9 +700,9 @@ agent:
     ## @param agent.image.repository App Agent image repository
     repository: presemantic/public/images/opsolving-app-agent-api
     ## @param agent.image.tag App Agent image tag
-    tag: "2026-08-12.22-54-05.640666d"
+    tag: "2026-08-29.16-18-32.17c386c"
     ## @param agent.image.digest App Agent image digest; overrides the tag when set
-    digest: "sha256:fa3e3c97768fb3793b42d909ec2b04f46f5e422bebbcbf3617ff20d268505c9b"
+    digest: "sha256:be515d0a74cc560c5c20aa05961eec8342e59f1f6547b25424958f1e34136a2c"
     ## @param agent.image.pullPolicy App Agent image pull policy
     pullPolicy: IfNotPresent
     ## @param agent.image.pullSecrets App Agent image pull secrets
@@ -951,9 +954,9 @@ mcp-proxy:
     ## @param mcp-proxy.image.repository App MCP Proxy image repository
     repository: presemantic/public/images/opsolving-app-mcp-proxy-api
     ## @param mcp-proxy.image.tag App MCP Proxy image tag
-    tag: "2026-08-29.00-34-29.edcc579"
+    tag: "2026-08-29.15-25-57.674d976"
     ## @param mcp-proxy.image.digest App MCP Proxy image digest; overrides the tag when set
-    digest: "sha256:afbb382c12f7a96fe88cec5702667602815f4b46b49f65263a114d59e964ca28"
+    digest: "sha256:188eedffc41239def782d94b14fb3a17fc2bfb0da070950c82856b71d31344b2"
     ## @param mcp-proxy.image.pullPolicy App MCP Proxy image pull policy
     pullPolicy: IfNotPresent
     ## @param mcp-proxy.image.pullSecrets App MCP Proxy image pull secrets
@@ -1396,9 +1399,9 @@ front:
     ## @param front.image.repository App Frontend image repository
     repository: presemantic/public/images/opsolving-app-front
     ## @param front.image.tag App Frontend image tag
-    tag: "2026-08-29.00-34-29.f26bd09"
+    tag: "2026-08-29.15-22-21.670ea15"
     ## @param front.image.digest App Frontend image digest; overrides the tag when set
-    digest: "sha256:598faab89928fdc6f9a4d115c00fbe63dd982aca338d207b89820e484ce9a4c2"
+    digest: "sha256:0d331bb8498d02a2e366ef3c13f165d1a05c313f50bd2c73e27c4d6d8236a8c8"
     ## @param front.image.pullPolicy App Frontend image pull policy
     pullPolicy: IfNotPresent
     ## @param front.image.pullSecrets App Frontend image pull secrets
