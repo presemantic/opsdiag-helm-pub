@@ -965,9 +965,9 @@ mcp-proxy:
     ## @param mcp-proxy.image.repository App MCP Proxy image repository
     repository: presemantic/public/images/opsolving-app-mcp-proxy-api
     ## @param mcp-proxy.image.tag App MCP Proxy image tag
-    tag: "2026-08-29.15-25-57.674d976"
+    tag: "2026-08-29.23-46-38.1f3afea"
     ## @param mcp-proxy.image.digest App MCP Proxy image digest; overrides the tag when set
-    digest: "sha256:188eedffc41239def782d94b14fb3a17fc2bfb0da070950c82856b71d31344b2"
+    digest: "sha256:4f2cf38bb37c42eb38bfef18459aab2c8b68c583b4762969bbba994dc363929c"
     ## @param mcp-proxy.image.pullPolicy App MCP Proxy image pull policy
     pullPolicy: IfNotPresent
     ## @param mcp-proxy.image.pullSecrets App MCP Proxy image pull secrets
