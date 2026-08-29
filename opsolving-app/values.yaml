@@ -413,9 +413,9 @@ api:
     ## @param api.image.repository App API image repository
     repository: presemantic/public/images/opsolving-app-api
     ## @param api.image.tag App API image tag
-    tag: "2026-08-29.22-21-36.8a2b0b1"
+    tag: "2026-08-29.23-16-53.a2c39e8"
     ## @param api.image.digest App API image digest; overrides the tag when set
-    digest: "sha256:3aef62231e71caf815d60ffc8d4cd27f2a9d2cd7b249837f7f76dbb591377f84"
+    digest: "sha256:278c3aa555ca461bd9e4e5c50d4d2e73c9bd6d9b3e4e47c943a44e4a8208828e"
     ## @param api.image.pullPolicy App API image pull policy
     pullPolicy: IfNotPresent
     ## @param api.image.pullSecrets App API image pull secrets
@@ -675,6 +675,10 @@ api:
       # Keep false until the phase-1 Flow instruction writers are drained and
       # the compatibility cleanup preflight has been approved.
       - name: FLOW_INSTRUCTION_COMPAT_CLEANUP_ACK
+        value: "false"
+      # Keep false until App PostgreSQL is backed up, Reviewer polling writers
+      # are drained, and the webhook compatibility preflight is approved.
+      - name: REVIEWER_WEBHOOK_CLEANUP_ACK
         value: "false"
 
 ## @section App Agent parameters
@@ -1188,9 +1192,9 @@ vcs:
     ## @param vcs.image.repository App VCS image repository
     repository: presemantic/public/images/opsolving-app-vcs-api
     ## @param vcs.image.tag Exact published App VCS image tag
-    tag: "2026-08-29.00-34-29.43ccb21"
+    tag: "2026-08-29.23-12-56.9cd46e5"
     ## @param vcs.image.digest Optional immutable App VCS image digest
-    digest: "sha256:e90540d458f75cbbb0098236fa3cbf0889cbb85b4cafade5d59af0c28e06b941"
+    digest: "sha256:2c3abb760859bc8877687ed1be487b674aa842f41a26dc09029184cf96d9f9e8"
     ## @param vcs.image.pullPolicy App VCS image pull policy
     pullPolicy: IfNotPresent
     ## @param vcs.image.pullSecrets App VCS image pull secrets
