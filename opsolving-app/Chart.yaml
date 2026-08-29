@@ -2,8 +2,8 @@ apiVersion: v2
 name: opsolving-app
 description: Complete Opsolving application stack
 type: application
-version: 1.0.21
-appVersion: "2026-08-29.16-18-32"
+version: 1.0.22
+appVersion: "2026-08-29.20-58-30.608d9f5"
 dependencies:
   - name: common
     repository: https://opsolving.github.io/charts/
