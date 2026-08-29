@@ -711,9 +711,9 @@ agent:
     ## @param agent.image.repository App Agent image repository
     repository: presemantic/public/images/opsolving-app-agent-api
     ## @param agent.image.tag App Agent image tag
-    tag: "2026-08-29.17-27-50.cfbdaaa"
+    tag: "2026-08-29.23-16-37.5ef7a01"
     ## @param agent.image.digest App Agent image digest; overrides the tag when set
-    digest: "sha256:f8b57f819d91de05b839eaa27120343622d9f0ce029656805445b6cd9b05e013"
+    digest: "sha256:c876c811d42fc1dfda5bc64d4199d363f263230b4e4d2daa69d8f9d9305214f4"
     ## @param agent.image.pullPolicy App Agent image pull policy
     pullPolicy: IfNotPresent
     ## @param agent.image.pullSecrets App Agent image pull secrets
