@@ -669,6 +669,9 @@ api:
       # Keep false until both PostgreSQL databases are backed up and the provider-identity cutover report is approved.
       - name: PROVIDER_IDENTITY_CUTOVER_MIGRATION_ACK
         value: "false"
+      # Keep false until the App PostgreSQL backup and Flow instruction cutover report are approved.
+      - name: FLOW_INSTRUCTION_CUTOVER_MIGRATION_ACK
+        value: "false"
 
 ## @section App Agent parameters
 ##
