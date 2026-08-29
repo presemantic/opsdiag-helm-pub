@@ -413,9 +413,9 @@ api:
     ## @param api.image.repository App API image repository
     repository: presemantic/public/images/opsolving-app-api
     ## @param api.image.tag App API image tag
-    tag: "2026-08-29.20-58-30.608d9f5"
+    tag: "2026-08-29.22-21-36.8a2b0b1"
     ## @param api.image.digest App API image digest; overrides the tag when set
-    digest: "sha256:154f4f6c50aaea0d2baee4799188168f2f8d0feb6407848fb3d40c9d48280fff"
+    digest: "sha256:3aef62231e71caf815d60ffc8d4cd27f2a9d2cd7b249837f7f76dbb591377f84"
     ## @param api.image.pullPolicy App API image pull policy
     pullPolicy: IfNotPresent
     ## @param api.image.pullSecrets App API image pull secrets
@@ -671,6 +671,10 @@ api:
         value: "false"
       # Keep false until the App PostgreSQL backup and Flow instruction cutover report are approved.
       - name: FLOW_INSTRUCTION_CUTOVER_MIGRATION_ACK
+        value: "false"
+      # Keep false until the phase-1 Flow instruction writers are drained and
+      # the compatibility cleanup preflight has been approved.
+      - name: FLOW_INSTRUCTION_COMPAT_CLEANUP_ACK
         value: "false"
 
 ## @section App Agent parameters
@@ -1402,9 +1406,9 @@ front:
     ## @param front.image.repository App Frontend image repository
     repository: presemantic/public/images/opsolving-app-front
     ## @param front.image.tag App Frontend image tag
-    tag: "2026-08-29.20-29-03.e6b2951"
+    tag: "2026-08-29.22-19-11.c36dd1d"
     ## @param front.image.digest App Frontend image digest; overrides the tag when set
-    digest: "sha256:9a7a94442b121b8211f1d54dad81cc413d5cebead8f98a031f6ec67e4f718ebc"
+    digest: "sha256:854038b92da1b45cb517ace6e6cca60d774bd7fb40efe8791902f4d77860fb85"
     ## @param front.image.pullPolicy App Frontend image pull policy
     pullPolicy: IfNotPresent
     ## @param front.image.pullSecrets App Frontend image pull secrets
