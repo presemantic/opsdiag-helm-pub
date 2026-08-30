@@ -1410,9 +1410,9 @@ front:
     ## @param front.image.repository App Frontend image repository
     repository: presemantic/public/images/opsolving-app-front
     ## @param front.image.tag App Frontend image tag
-    tag: "2026-08-29.22-19-11.c36dd1d"
+    tag: "2026-08-30.02-12-01.3149d2c"
     ## @param front.image.digest App Frontend image digest; overrides the tag when set
-    digest: "sha256:854038b92da1b45cb517ace6e6cca60d774bd7fb40efe8791902f4d77860fb85"
+    digest: "sha256:87d51b0f81f3866646b04e04aa74e4edcead37e5e7f0d9b27695b388a84887d9"
     ## @param front.image.pullPolicy App Frontend image pull policy
     pullPolicy: IfNotPresent
     ## @param front.image.pullSecrets App Frontend image pull secrets
